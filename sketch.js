@@ -17,14 +17,23 @@ a.style.zIndex = "1";
 bout=document.getElementById('bouton');
 bout.style.position = "absolute";
 bout.style.zIndex = "2";
-bout.offsetLeft = 100;
+bout.style.top = "100px";
+bout.style.left = "100px";
   	
-bout.onclick = function(evt) {
-//a.style("visibility", "hidden"); ------ ok
-a.html("Je t'avais prévenu");
-TweenLite.to(bout, 1.5, {x:100, y:100 });
-    }
+
   
+bout.addEventListener('click', function(e) {
+          //a.style("visibility", "hidden"); ------ ok
+          a.html("Je t'avais prévenu");
+          TweenLite.to(bout, 1.5, {x:100, y:1000 });
+}, false);
+
+
+
+bout.addEventListener('mouseover', function(e) {
+          a.html("fais gaffe !");
+}, false);
+
 }
 
 
@@ -34,10 +43,7 @@ function draw() {
 // a.style("left", mouseX+"px");  ----- ok
 // a.style("top", mouseY+"px");   ----- ok
   
-  // Dive.style.top = 100;----- ok
-  // Dive.style.left = 50;----- ok
-  
-  a.position(mouseX, mouseY);
-  
+
+          a.position(mouseX, mouseY-50);
   
 }
