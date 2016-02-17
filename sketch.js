@@ -5,13 +5,20 @@ function setup() {
   
   a.style("background-color", "#FF0000");
   a.style("font-size", "18pt");
-  a.position(50, 50);
+  //a.position(100, 100);
+  a.style.position= "relative";
+  a.style.zIndex = "1";
   
   
   // myDiv = createDiv("C'est my Div");  --- cree une div en p5
   // myDiv.position(20, 20);
   
-    document.getElementById('bouton').onclick = function(evt) {
+  	bout=document.getElementById('bouton');
+  	bout.style.position= "relative";
+  	bout.style.zIndex = "2";
+  	//bout.style("z-index", 2);
+  	
+    bout.onclick = function(evt) {
     a.style("visibility", "hidden");
     
     }
@@ -22,6 +29,7 @@ function setup() {
 function draw() {
   // a.style("left", mouseX+"px");  ----- ok
   // a.style("top", mouseY+"px");   ----- ok
-  a.position(mouseX, mouseY);     
+  a.position(mouseX, mouseY);
+       
   
 }
